@@ -1,9 +1,208 @@
+@import 'methods';
+@import 'fonts';
+@import 'borders';
+
+$light: #eaeaea;
+$dark: #242424;
+$darker: #121212;
+
 :root {
-    --bg: #eaeaea;
-    --fg: #121212;
+    // nothing right now
 }
 
 html, body {
-    background-color: var(--bg);
-    color: var(--fg);
+    background-color: $light;
+    color: $darker;
+    margin: 0;
+    @extend .font-text.light;
+}
+
+* {
+    position: relative;
+    outline: none 0 transparent;
+    @include smooth-transition;
+}
+
+::-webkit-scrollbar {
+    background: #121212;
+    width: 2mm;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #192221;
+    @extend .border-round;
+
+    &:hover {
+        background: #29413f;
+    }
+}
+
+.container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navigation {
+    z-index: 999;
+    padding: 3mm 0;
+    position: sticky;
+    top: 0;
+
+    .menu {
+        .in-link {
+            @extend .font-text.normal;
+            font-size: 9pt;
+
+            + .in-link {
+                margin-left: 16mm;
+            }
+            
+            &:link, &:visited {
+                color: $light;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:focus {
+                    color: #ffbe88;
+                }
+                &:hover {
+                    color: #ff9a88;
+                }
+            }
+        }
+    }
+}
+
+#entry-page {
+    background: $dark url('/images/wall.jpg');
+    background-position: right bottom;
+    background-size: 100%;
+    color: $light;
+
+    position: sticky;
+    top: calc(12mm - 100vh);
+
+    .page-block {
+        display: table-cell;
+        vertical-align: middle;
+        height: 95vh;
+        width: 100vw;
+
+        .container-intro {
+            --scroll-opacity: 1;
+            opacity: var(--scroll-opacity);
+
+            .info-contact {
+                .title {
+                    @extend .font-title;
+                    font-size: 7vw;
+                    color: $light;
+                    margin: 0 0 16mm 0;
+
+                    .title-tag {
+                        position: absolute;
+                        top: -1cm;
+                        left: -4mm;
+                        font-size: .7em;
+                        opacity: .2;
+                        user-select: none;
+                    }
+
+                    .title-main {
+                        position: sticky;
+                        top: 4mm;
+                    }
+                }
+
+                .skills {
+                    @extend .font-text.normal;
+                    font-size: 8pt;
+                    letter-spacing: 1px;
+                    margin-bottom: 1cm;
+
+                    .skill {
+                        + .skill {
+                            &::before {
+                                content: "•";
+                                font-size: 14pt;
+                                margin: 0 2mm;
+                            }
+                        }
+                    }
+                }
+
+                .contacts {
+                    margin-left: -1px; // visual alignment
+
+                    .contact-info {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        font-size: 8pt;
+
+                        .material-icons-outlined {
+                            font-size: inherit;
+                            color: #a86b60;
+                        }
+
+                        .info-text {
+                            margin-left: 2mm;
+                            letter-spacing: .5px;
+                        }
+
+                        &:link, &:visited {
+                            color: inherit;
+                            text-decoration: none;
+
+                            &:hover, &:focus {
+                                color: #e4988b;
+                                
+                                .font-numeric {
+                                    font-weight: 600;
+                                }
+                            }
+
+                        }
+                    }
+
+                    .direct-contacts {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .email {
+                            margin-left: 4mm;
+                        }
+                    }
+
+                    .social {
+                        margin-top: 7mm;
+                        margin-left: 3px;
+
+                        .social-link {
+                            font-size: 16pt;
+                            + .social-link {
+                                margin-left: 4mm;
+                            }
+                            
+                            &:link, &:visited {
+                                color: #bd8379;
+                                text-decoration: unset;
+                                transition: all 120ms linear;
+
+                                &:focus {
+                                    color: #a8b36c;
+                                }
+                                &:hover {
+                                    color: #d3e27e;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

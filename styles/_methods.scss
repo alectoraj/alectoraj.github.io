@@ -1,0 +1,11 @@
+@mixin set-bg($url) {
+    background-image: url($url);
+    background-position: center bottom;
+    background-size: 100%;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+@mixin smooth-transition($target: all, $easing: linear, $duration: 120ms) {
+    transition: $target $duration $easing;
+}
