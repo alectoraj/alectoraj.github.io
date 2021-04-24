@@ -6,10 +6,6 @@ $light: #eaeaea;
 $dark: #242424;
 $darker: #121212;
 
-:root {
-    // nothing right now
-}
-
 html, body {
     background-color: $light;
     color: $darker;
@@ -38,16 +34,14 @@ html, body {
 }
 
 .container {
-    max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
+    max-width: Min(1024px, 70vw);
 }
 
 .navigation {
     z-index: 999;
     padding: 3mm 0;
-    position: sticky;
-    top: 0;
 
     .menu {
         .in-link {
@@ -80,19 +74,13 @@ html, body {
     background-size: 100%;
     color: $light;
 
-    position: sticky;
-    top: calc(12mm - 100vh);
-
     .page-block {
         display: table-cell;
         vertical-align: middle;
-        height: 95vh;
         width: 100vw;
+        height: 50vw;
 
         .container-intro {
-            --scroll-opacity: 1;
-            opacity: var(--scroll-opacity);
-
             .info-contact {
                 .title {
                     @extend .font-title;
@@ -198,6 +186,81 @@ html, body {
                                 &:hover {
                                     color: #d3e27e;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#about-page {
+    .page-block {
+        .container-about {
+            margin-top: 1.2in;
+            margin-bottom: 1in;
+
+            .section-title {
+                text-transform: uppercase;
+                letter-spacing: 2mm;
+                font-weight: 800;
+                color: #dd2e0f;
+                text-align: center;
+                padding-right: 16mm;
+                margin-bottom: .8in;
+            }
+
+            .overview-grid {
+                display: grid;
+                gap: 12mm;
+                grid-template-columns: 30% auto;
+
+                .dp-container {
+                    padding: 3pt;
+                    background: #25211e;
+                    border-radius: 999in;
+
+                    $size: 7cm;
+                    max-height: $size;
+                    max-width: $size;
+
+                    .dp {
+                        max-height: $size;
+                        max-width: $size;
+                        border-radius: inherit;
+                    }
+                }
+
+                .brief-description {
+                    @extend .font-serif;
+                    font-style: italic;
+                    font-size: 14pt;
+                    letter-spacing: .5px;
+
+                    p:first-child {
+                        margin-top: 3mm;
+                    }
+                }
+
+                .about-contacts {
+                    .titled-info {
+                        margin: 0 7mm;
+                        .info-title {
+                            margin-bottom: 1mm;
+                        }
+                        .info-text {
+                            color: #727272;
+                            font-weight: 500;
+
+                            &.font-numeric {
+                                font-weight: 600;
+                            }
+                        }
+
+                        + .titled-info {
+                            .info-title {
+                                margin-top: 7mm;
                             }
                         }
                     }

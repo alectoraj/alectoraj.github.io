@@ -1,5 +1,5 @@
 $(function() {
-    trackScrollOpacity();
+    // trackScrollOpacity();
 });
 
 function trackScrollOpacity() {
@@ -11,7 +11,7 @@ function trackScrollOpacity() {
         let nodeHeight = node.height();
         let scrollOpacity = (nodeHeight - scrolled) / nodeHeight;
 
-        node.css('--scroll-opacity', clamp(0, scrollOpacity, 1));
+        // node.css('--scroll-opacity', clamp(0, scrollOpacity, 1));
     }
 
     $window.on('scroll', function() {
