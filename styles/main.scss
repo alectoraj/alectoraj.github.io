@@ -1,8 +1,9 @@
 @import 'methods';
 @import 'fonts';
 @import 'borders';
+@import 'progressbar';
 
-$light: #eaeaea;
+$light: #fafafa;
 $dark: #242424;
 $darker: #121212;
 
@@ -29,14 +30,24 @@ html, body {
     @extend .border-round;
 
     &:hover {
-        background: #29413f;
+        background: #698583;
     }
+}
+
+::-webkit-scrollbar:hover + ::-webkit-scrollbar-thumb {
+    background: #698583;
 }
 
 .container {
     margin-left: auto;
     margin-right: auto;
     max-width: Min(1024px, 70vw);
+
+    @include mobile {
+        margin-left: 6mm;
+        margin-right: 6mm;
+        max-width: unset;
+    }
 }
 
 .navigation {
@@ -50,6 +61,10 @@ html, body {
 
             + .in-link {
                 margin-left: 16mm;
+
+                @include mobile {
+                    margin-left: 4mm;
+                }
             }
             
             &:link, &:visited {
@@ -68,6 +83,33 @@ html, body {
     }
 }
 
+@mixin put-social($mt, $color, $colorFocus, $colorHover) {
+    .social {
+        margin-top: $mt;
+        margin-left: 3px;
+
+        .social-link {
+            font-size: 16pt;
+            + .social-link {
+                margin-left: 5mm;
+            }
+            
+            &:link, &:visited {
+                color: $color;
+                text-decoration: unset;
+                transition: all 120ms linear;
+
+                &:focus {
+                    color: $colorFocus;
+                }
+                &:hover {
+                    color: $colorHover;
+                }
+            }
+        }
+    }
+}
+
 #entry-page {
     background: $dark url('/images/wall.jpg');
     background-position: right bottom;
@@ -78,9 +120,11 @@ html, body {
         display: table-cell;
         vertical-align: middle;
         width: 100vw;
-        height: 50vw;
+        height: 100vh;
 
         .container-intro {
+            margin-top: 16mm;
+
             .info-contact {
                 .title {
                     @extend .font-title;
@@ -88,13 +132,21 @@ html, body {
                     color: $light;
                     margin: 0 0 16mm 0;
 
+                    @include mobile {
+                        font-size: 12vw;
+                    }
+
                     .title-tag {
                         position: absolute;
-                        top: -1cm;
-                        left: -4mm;
+                        top: -0.5em;
+                        left: -0.2em;
                         font-size: .7em;
                         opacity: .2;
                         user-select: none;
+
+                        @include mobile {
+                            top: -0.6em;
+                        }
                     }
 
                     .title-main {
@@ -103,27 +155,10 @@ html, body {
                     }
                 }
 
-                .skills {
-                    @extend .font-text.normal;
-                    font-size: 8pt;
-                    letter-spacing: 1px;
-                    margin-bottom: 1cm;
+                .location {
+                    margin-left: -2px; // visual alignment
 
-                    .skill {
-                        + .skill {
-                            &::before {
-                                content: "•";
-                                font-size: 14pt;
-                                margin: 0 2mm;
-                            }
-                        }
-                    }
-                }
-
-                .contacts {
-                    margin-left: -1px; // visual alignment
-
-                    .contact-info {
+                    .location-info {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -154,81 +189,100 @@ html, body {
 
                         }
                     }
+                }
 
-                    .direct-contacts {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
+                .skills {
+                    @extend .font-text.normal;
+                    font-size: 8pt;
+                    letter-spacing: 1px;
 
-                        .email {
-                            margin-left: 4mm;
+                    .skill {
+                        + .skill {
+                            &::before {
+                                content: "•";
+                                font-size: 14pt;
+                                margin: 0 2mm;
+
+                                @include mobile {
+                                    content: unset;
+                                }
+                            }
                         }
                     }
 
-                    .social {
-                        margin-top: 7mm;
-                        margin-left: 3px;
-
-                        .social-link {
-                            font-size: 16pt;
-                            + .social-link {
-                                margin-left: 4mm;
-                            }
-                            
-                            &:link, &:visited {
-                                color: #bd8379;
-                                text-decoration: unset;
-                                transition: all 120ms linear;
-
-                                &:focus {
-                                    color: #a8b36c;
-                                }
-                                &:hover {
-                                    color: #d3e27e;
-                                }
-                            }
-                        }
+                    @include mobile {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 3mm;
+                        opacity: .7;
                     }
                 }
+                
+                @include put-social(3cm, #bd8379, #a8b36c, #d3e27e);
             }
         }
     }
 }
 
+@mixin center-section-title($fg) {
+    .section-title {
+        text-transform: uppercase;
+        letter-spacing: 2mm;
+        font-weight: 800;
+        color: $fg;
+        text-align: center;
+        padding-right: 16mm; // visual adjustment
+        margin-bottom: .8in;
+        cursor: default;
+
+        @include mobile {
+            text-align: unset;
+            padding-right: unset;
+            padding-left: 2px;
+        }
+    }
+}
+
 #about-page {
+    padding-top: 1in;
+
     .page-block {
         .container-about {
-            margin-top: 1.2in;
-            margin-bottom: 1in;
+            margin-bottom: 1.2in;
 
-            .section-title {
-                text-transform: uppercase;
-                letter-spacing: 2mm;
-                font-weight: 800;
-                color: #dd2e0f;
-                text-align: center;
-                padding-right: 16mm;
-                margin-bottom: .8in;
-            }
+            @include center-section-title(#dd2e0f);
 
             .overview-grid {
                 display: grid;
                 gap: 12mm;
                 grid-template-columns: 30% auto;
 
+                @include tablet {
+                    grid-template-columns: auto;
+                }
+
                 .dp-container {
                     padding: 3pt;
                     background: #25211e;
                     border-radius: 999in;
 
-                    $size: 7cm;
-                    max-height: $size;
-                    max-width: $size;
+                    --dp-size: 7cm;
+
+                    max-height: var(--dp-size);
+                    max-width: var(--dp-size);
 
                     .dp {
-                        max-height: $size;
-                        max-width: $size;
+                        max-height: inherit;
+                        max-width: inherit;
                         border-radius: inherit;
+                    }
+                    
+                    @include pc {
+                        --dp-size: 5cm;
+                    }
+                    @include mobile {
+                        --dp-size: calc(100vw - 14mm);
+                        border-radius: 0;
                     }
                 }
 
@@ -244,8 +298,13 @@ html, body {
                 }
 
                 .about-contacts {
+                    margin: 0 12mm;
+
+                    @include tablet {
+                        display: none;
+                    }
+
                     .titled-info {
-                        margin: 0 7mm;
                         .info-title {
                             margin-bottom: 1mm;
                         }
@@ -260,12 +319,347 @@ html, body {
 
                         + .titled-info {
                             .info-title {
-                                margin-top: 7mm;
+                                margin-top: 1cm;
                             }
+                        }
+                    }
+
+                    @include put-social(2cm, #5f5909, #636649, #0f3b25);
+                }
+
+                .skill-ratings {
+                    margin-top: 1mm;
+
+                    @include pc {
+                        .skill-rating:first-child {
+                            margin-top: 1cm;
+                        }
+                    }
+
+                    &::before {
+                        content: "SKILL RATING";
+                        position: absolute;
+                        top: 0; left: 4in;
+                        transform: rotate(90deg) translateX(51%);
+                        width: 4in;
+
+                        text-transform: uppercase;
+                        letter-spacing: 2mm;
+                        font-weight: 800;
+                        color: #dd2e0f;
+
+                        
+                        @include pc {
+                            transform: unset;
+                            position: relative;
+                            left: 0;
+                        }
+                    }
+                    
+                    @include skill-rating("JAVA", 91%, "Java 16", 1px);
+                    @include skill-rating("REST", 87%, "REST Web Services");
+                    @include skill-rating("Spring", 78%, "Spring, Spring Boot");
+                    @include skill-rating("Hibernate", 75%, "Hibernate, JPA");
+                    @include skill-rating("Oracle", 82%);
+                    @include skill-rating("JavaScript", 67%, $titleShift: 1px);
+                    @include skill-rating("HTML-CSS", 62%, "HTML, CSS");
+
+                    .skill-rating {
+                        + .skill-rating {
+                            margin-top: 1cm;
+                        }
+
+                        @include tablet {
+                            --progress-length: 97%;
+                        }
+                        @include mobile {
+                            --progress-length: calc(100vw - 14mm);
+                        }
+                    }
+                }
+            }
+
+            .contact-buttons {
+                margin-top: 2in;
+                margin-right: 1cm;
+                text-align: center;
+
+                $darkContactButton: #3b2d2a;
+                @mixin contact-button($selector, $fg, $bg, $px) {
+
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12mm;
+
+                    .contact-button.#{$selector} {
+                        &:link, &:visited {
+                            font-weight: 600;
+                            color: $fg;
+                            text-decoration: none;
+                            letter-spacing: 2px;
+
+                            border: $darkContactButton solid 1mm;
+                            background: $bg;
+
+                            padding: 4mm $px;
+                            
+                            @include tablet {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    @include tablet {
+                        flex-direction: column;
+                    }
+                }
+
+                @include tablet {
+                    margin-right: unset;
+                }
+
+                @include contact-button("contact-me", $darkContactButton, $light, 16mm);
+                @include contact-button("download-cv", $light, $darkContactButton, 10mm);
+            }
+        }
+    }
+}
+
+#experience-page {
+    $light: #dbdbdb;
+    background: $light;
+    padding: 1in 0;
+
+    .page-block {
+        .experience-block {
+            + .experience-block {
+                margin-top: 1.2in;
+            }
+
+            .section-title {
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-size: 14pt;
+                margin-bottom: 16mm;
+            }
+
+            .experience-item {
+                + .experience-item {
+                    margin-top: 12mm;
+                }
+
+                .material-icons-sharp {
+                    margin-left: -1px;
+                    color: #424242;
+                }
+
+                .experience-title {
+                    margin: 0;
+                    font-size: 12pt;
+
+                    .company {
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+
+                        &::after {
+                            content: "•";
+                            margin: 0 2mm;
+                            opacity: .9;
+                        }
+                    }
+
+                    .job-title {
+                        @extend .font-serif;
+                        font-style: italic;
+                        letter-spacing: .5px;
+                    }
+                }
+
+                .experience-subtitles {
+                    .experience-subtitle {
+                        margin-left: .5px;
+                        @extend .font-numeric;
+                        font-weight: 600;
+                        font-size: 6.5pt;
+                        color: #929292;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        
+                        + .experience-subtitle {
+                            &::before {
+                                content: "•";
+                                margin: 0 2mm;
+                                opacity: .9;
+                            }
+                        }
+                    }
+                }
+
+                .experience-details {
+                    margin: 6mm 1px;
+                    padding-left: 0;
+                    list-style-type: "–";
+                    list-style-position: outside;
+
+                    @extend .font-serif;
+                    font-weight: 500;
+                    font-size: 9pt;
+                    color: #626262;
+                    letter-spacing: 1px;
+
+                    li {
+                        margin: 1mm 0;
+                        padding-left: 2mm;
+                    }
+                }
+            }
+            
+            &.education {
+                .material-icons-sharp {
+                    color: #545454;
+                    transform: scaleY(.9);
+                }
+            }
+        }
+    }
+}
+
+#more-page {
+    $highlight: #ff2a6a;
+    $darkLocal: #1f1918;
+
+    background: $darkLocal;
+    padding: 1in 0 1.5in 0;
+    
+    .page-block {
+        .container-more {
+            padding-right: 16mm; // visual adjustment
+            @include pc {
+                padding-right: unset;
+            }
+
+            @include center-section-title($highlight);
+            .section-title {
+                padding-right: unset;
+                text-align: center;
+            }
+
+            .section-title:not(:first-child) {
+                margin-top: 1in;
+                margin-bottom: 0;
+            }
+
+            .block-items {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1cm;
+
+                @include tablet {
+                    flex-direction: column;
+                    gap: 16mm;
+                }
+
+                .block-item {
+                    width: 30%;
+                    @include tablet {
+                        width: 100%;
+                    }
+
+                    .block-title {
+                        text-align: center;
+
+                        .block-title-icon {
+                            color: $highlight;
+                            font-size: 48pt;
+                            display: block;
+                        }
+
+                        .block-title-text {
+                            color: $light;
+                            display: block;
+                        }
+                    }
+
+                    &.personality {
+                        .hashtags {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: 1mm 3mm;
+                            justify-content: center;
+
+                            .hashtag {
+                                @extend .font-serif;
+                                color: #bdbdbd;
+
+                                &::before {
+                                    content: "#";
+                                }
+                            }
+                        }
+                    }
+
+                    &.language {
+                        @include skill-rating("Bangla", 100%);
+                        @include skill-rating("English", 85%);
+                        @include skill-rating("Hindi", 50%);
+                        --progress-length: 100%;
+                        --title-color: #e0dcde;
+                    }
+                }
+            }
+
+            .section-highlight {
+                color: $light;
+                font-size: Max(3vw, 24pt);
+                text-align: center;
+                margin: 2mm 0;
+            }
+
+            @include put-social(2cm, #eee1df, #a8b36c, #d3e27e);
+            .social {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 12mm;
+
+                .social-link {
+                    + .social-link {
+                        margin: unset;
+                    }
+
+                    @include mobile {
+                        font-size: 36pt;
+                    }
+                    
+                    .link-title {
+                        margin-left: 2mm;
+                        cursor: inherit;
+                        @include mobile {
+                            all: unset;
+                            display: none;
                         }
                     }
                 }
             }
         }
+    }
+}
+
+.end-line {
+    position: absolute;
+    bottom: 3mm;
+    left: calc(50% - 8mm);
+    width: Min(2in, 25%);
+    transform: translateX(-50%);
+    opacity: .3;
+
+    background: transparent;
+    border: unset;
+    border-bottom: solid 1px $light;
+
+    @include pc {
+        left: 50%;
     }
 }

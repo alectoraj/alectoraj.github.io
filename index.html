@@ -2,11 +2,13 @@
 <html>
     <head>
         <title>Arindam Biswas</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Montserrat:wght@300;500;800&family=Noto+Serif:ital@0;1&family=Open+Sans:wght@300;600&display=swap"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
         <link rel="stylesheet" href="icons/fontawesome-5/css/all.css"/>
         <link rel="stylesheet" href="u/styles/main.css"/>
 
@@ -18,10 +20,10 @@
             <section class="navigation">
                 <div class="container">
                     <nav class="menu">
-                        <a href="#page-1" class="in-link">Home</a>
-                        <a href="#page-2" class="in-link">About</a>
-                        <a href="#page-3" class="in-link">Experience</a>
-                        <a href="#page-4" class="in-link">More</a>
+                        <a href="#entry-page" class="in-link">Home</a>
+                        <a href="#about-page" class="in-link">About</a>
+                        <a href="#experience-page" class="in-link">Experience</a>
+                        <a href="#more-page" class="in-link">More</a>
                     </nav>
                 </div>
             </section>
@@ -32,41 +34,25 @@
                             <span class="title-tag">I'm</span>
                             <label class="title-main">Arindam Biswas</label>
                         </h1>
+                        <div class="location">
+                            <label class="location-info">
+                                <span class="material-icons-outlined">place</span>
+                                <span class="info-text">Mumbai, India</span>
+                            </label>
+                        </div>
                         <div class="skills">
                             <label class="skill">BACK-END DEVELOPER</label><label class="skill">FRONT-END DEVELOPER</label>
                         </div>
-                        <div class="contacts">
-                            <div class="location">
-                                <label class="contact-info">
-                                    <span class="material-icons-outlined">place</span>
-                                    <span class="info-text">Navi Mumbai, Airoli</span>
-                                </label>
-                            </div>
-                            <div class="direct-contacts">
-                                <div class="phone">
-                                    <a class="contact-info" href="tel:+91 7384107072">
-                                        <span class="material-icons-outlined">perm_phone_msg</span>
-                                        <span class="info-text font-numeric">+91 7384107072</span>
-                                    </a>
-                                </div>
-                                <div class="email">
-                                    <a class="contact-info" href="mailto:rb.arindam@gmail.com">
-                                        <span class="material-icons-outlined">drafts</span>
-                                        <span class="info-text">rb.arindam@gmail.com</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="social">
-                                <a href="https://www.linkedin.com/in/arindam-biswas/" class="social-link" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/alectoraj/" class="social-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://t.me/alectoraj/" class="social-link" target="_blank">
-                                    <i class="fab fa-telegram-plane"></i>
-                                </a>
-                            </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/arindam-biswas/" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/alectoraj/" class="social-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://t.me/alectoraj/" class="social-link" target="_blank">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -99,36 +85,224 @@
                             </div>
                             <div class="titled-info">
                                 <h4 class="info-title">ADDRESS</h4>
-                                <label class="info-text" style="margin-left: -1px;">Navi Mumbai, Airoli</label>
+                                <label class="info-text" style="margin-left: -1px;">Mumbai, India</label>
                             </div>
-                            <div class="titled-info">
-                                <h4 class="info-title">PHONE</h4>
-                                <label class="info-text font-numeric">+91 7384107072</label>
-                            </div>
-                            <div class="titled-info">
-                                <h4 class="info-title">EMAIL</h4>
-                                <label class="info-text">rb.arindam@gmail.com</label>
+                            <div class="social">
+                                <a href="https://www.linkedin.com/in/arindam-biswas/" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/alectoraj/" class="social-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://t.me/alectoraj/" class="social-link" target="_blank">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="skill-ratings">
-                            <div class="skill-rating">
-                                <div class="progress-bar" data-percent="90%">
-                                    <label class="progress-pop font-numeric">90%</label>
+                            <div class="skill-rating" id="skill-rating-java">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-rest">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-spring">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-hibernate">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-oracle">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-javascript">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-html-css">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/arindam-biswas/" target="_blank" class="contact-button contact-me">CONTACT ME</a>
+                        <a href="https://1drv.ms/w/s!AhYhGvZpW3XQiukWMEHSfzwRD3EeAw?e=RTO8PQ" target="_blank" class="contact-button download-cv">DOWNLOAD MY CV</a>
                     </div>
                 </div>
             </section>
         </div>
 
-        <div class="extend-page">
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
-            kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>kajsd<br/>
+        <div id="experience-page">
+            <section class="page-block page-experience">
+                <div class="container container-experience">
+                    <div class="experience-block professional">
+                        <h4 class="section-title">Professional Experience</h4>
+                        <div class="experience-item">
+                            <span class="material-icons-sharp">business_center</span>
+                            <h5 class="experience-title">
+                                <label class="company">LTI</label><label class="job-title">Java Full Stack Developer</label>
+                            </h5>
+                            <div class="experience-subtitles">
+                                <label class="experience-subtitle">2018, Nov - Present</label><label class="experience-subtitle">Banking</label>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Business communications, requirement gathering &amp; analysis</li>
+                                <li>Coordinate across teams to build sustainable solution</li>
+                                <li>Develop full stack applications using Java, Spring, Hibernate, JavaScript, jQuery, Oracle</li>
+                                <li>Enhance, Bigfix and deploy new requirements as they arrive</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <span class="material-icons-sharp">business_center</span>
+                            <h5 class="experience-title">
+                                <label class="company">Citius Tech</label><label class="job-title">Java Full Stack Developer</label>
+                            </h5>
+                            <div class="experience-subtitles">
+                                <label class="experience-subtitle">2018, May - Sept</label><label class="experience-subtitle">Healthcare</label>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Work in Agile team to build quick-paced development requirements</li>
+                                <li>Build smooth, lag-free and attractive front end UX/UI</li>
+                                <li>Develop full stack applications using Java, Spring, Hibernate, Oracle, Angular</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <span class="material-icons-sharp">business_center</span>
+                            <h5 class="experience-title">
+                                <label class="company">Accenture</label><label class="job-title">Java Backend Developer</label>
+                            </h5>
+                            <div class="experience-subtitles">
+                                <label class="experience-subtitle">2015, Apr - 2018, May</label><label class="experience-subtitle">Retail Banking</label>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Business communications, requirement gathering &amp; analysis</li>
+                                <li>Design, Redesign &amp; develop extremely optimized batch applications, super exceeding expectations</li>
+                                <li>Develop optimized backend applications using Java, Spring, JPA, Oracle, Apache Wink</li>
+                                <li>Develop integration testing to cover web services using SoapUI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-block education">
+                        <h4 class="section-title">Education</h4>
+                        <div class="experience-item">
+                            <span class="material-icons-sharp">school</span>
+                            <h5 class="experience-title">
+                                <label class="company">University Institute of Technology</label><label class="job-title">Information Technology</label>
+                            </h5>
+                            <div class="experience-subtitles">
+                                <label class="experience-subtitle">2010 - 2014</label><label class="experience-subtitle">Burdwan University</label>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Software Engineering</li>
+                                <li>Learnt Java, C, C++, Data Structure, Oracle, Internet Technology</li>
+                                <li style="transform: scaleY(.9);">TCPA 72.7</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="more-page">
+            <section class="page-block page-more">
+                <div class="container container-more">
+                    <h3 class="section-title">More</h3>
+                    <div class="block-items">
+                        <div class="block-item personality">
+                            <h4 class="block-title">
+                                <span class="block-title-icon material-icons-outlined">self_improvement</span>
+                                <label class="block-title-text">Personality</label>
+                            </h4>
+                            <div class="hashtags">
+                                <label class="hashtag">philosophical</label>
+                                <label class="hashtag">witty</label>
+                                <label class="hashtag">fearless</label>
+                                <label class="hashtag">dynamic</label>
+                                <label class="hashtag">organized</label>
+                                <label class="hashtag">teamwork</label>
+                                <label class="hashtag">good-listener</label>
+                            </div>
+                        </div>
+                        <div class="block-item language">
+                            <h4 class="block-title">
+                                <span class="block-title-icon material-icons-outlined">public</span>
+                                <label class="block-title-text">Language</label>
+                            </h4>
+                            <div class="skill-rating" id="skill-rating-bangla">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-english">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                            <div class="skill-rating" id="skill-rating-hindi">
+                                <h4 class="progress-title"></h4>
+                                <div class="progress-bar">
+                                    <label class="progress-pop font-numeric"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-item personality">
+                            <h4 class="block-title">
+                                <span class="block-title-icon material-icons-outlined">accessibility_new</span>
+                                <label class="block-title-text">Interests</label>
+                            </h4>
+                            <div class="hashtags">
+                                <label class="hashtag">anime</label>
+                                <label class="hashtag">lofi music</label>
+                                <label class="hashtag">nature</label>
+                                <label class="hashtag">forest</label>
+                                <label class="hashtag">mountains</label>
+                                <label class="hashtag">physics</label>
+                                <label class="hashtag">sci-fi ideas</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="section-title">Contact</h3>
+                    <h3 class="section-highlight">Do not hesitate to contact me.</h3>
+                    
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/arindam-biswas/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <label class="link-title">Linkedin</label>
+                        </a>
+                        <a href="https://github.com/alectoraj/" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <label class="link-title">GitHub</label>
+                        </a>
+                        <a href="https://t.me/alectoraj/" class="social-link" target="_blank">
+                            <i class="fab fa-telegram-plane"></i>
+                            <label class="link-title">Telegram</label>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <hr class="end-line"/>
         </div>
     </body>
 </html>

@@ -15,12 +15,12 @@ html.normal, body.normal, .normal.font-text, .navigation .menu .in-link, #entry-
   font-weight: 500;
 }
 
-.font-numeric {
+.font-numeric, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #experience-page .page-block .experience-block .experience-item .experience-subtitles .experience-subtitle, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 
-.font-serif, #about-page .page-block .container-about .overview-grid .brief-description {
+.font-serif, #about-page .page-block .container-about .overview-grid .brief-description, #experience-page .page-block .experience-block .experience-item .experience-title .job-title, #experience-page .page-block .experience-block .experience-item .experience-details, #more-page .page-block .container-more .block-items .block-item.personality .hashtags .hashtag {
   font-family: 'Noto Serif', serif;
   font-weight: 400;
 }
@@ -30,7 +30,7 @@ html.normal, body.normal, .normal.font-text, .navigation .menu .in-link, #entry-
 }
 
 html, body {
-  background-color: #eaeaea;
+  background-color: #fafafa;
   color: #121212;
   margin: 0;
 }
@@ -52,13 +52,25 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #29413f;
+  background: #698583;
+}
+
+::-webkit-scrollbar:hover + ::-webkit-scrollbar-thumb {
+  background: #698583;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: Min(1024px, 70vw);
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin-left: 6mm;
+    margin-right: 6mm;
+    max-width: unset;
+  }
 }
 
 .navigation {
@@ -74,8 +86,14 @@ html, body {
   margin-left: 16mm;
 }
 
+@media screen and (max-width: 480px) {
+  .navigation .menu .in-link + .in-link {
+    margin-left: 4mm;
+  }
+}
+
 .navigation .menu .in-link:link, .navigation .menu .in-link:visited {
-  color: #eaeaea;
+  color: #fafafa;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -92,26 +110,36 @@ html, body {
   background: #242424 url("/images/wall.jpg");
   background-position: right bottom;
   background-size: 100%;
-  color: #eaeaea;
+  color: #fafafa;
 }
 
 #entry-page .page-block {
   display: table-cell;
   vertical-align: middle;
   width: 100vw;
-  height: 50vw;
+  height: 100vh;
+}
+
+#entry-page .page-block .container-intro {
+  margin-top: 16mm;
 }
 
 #entry-page .page-block .container-intro .info-contact .title {
   font-size: 7vw;
-  color: #eaeaea;
+  color: #fafafa;
   margin: 0 0 16mm 0;
+}
+
+@media screen and (max-width: 480px) {
+  #entry-page .page-block .container-intro .info-contact .title {
+    font-size: 12vw;
+  }
 }
 
 #entry-page .page-block .container-intro .info-contact .title .title-tag {
   position: absolute;
-  top: -1cm;
-  left: -4mm;
+  top: -0.5em;
+  left: -0.2em;
   font-size: .7em;
   opacity: .2;
   -webkit-user-select: none;
@@ -120,16 +148,62 @@ html, body {
           user-select: none;
 }
 
+@media screen and (max-width: 480px) {
+  #entry-page .page-block .container-intro .info-contact .title .title-tag {
+    top: -0.6em;
+  }
+}
+
 #entry-page .page-block .container-intro .info-contact .title .title-main {
   position: -webkit-sticky;
   position: sticky;
   top: 4mm;
 }
 
+#entry-page .page-block .container-intro .info-contact .location {
+  margin-left: -2px;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 8pt;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info .material-icons-outlined {
+  font-size: inherit;
+  color: #a86b60;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info .info-text {
+  margin-left: 2mm;
+  letter-spacing: .5px;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info:link, #entry-page .page-block .container-intro .info-contact .location .location-info:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info:link:hover, #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus, #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover, #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus {
+  color: #e4988b;
+}
+
+#entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .font-numeric, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #experience-page .page-block .container-intro .info-contact .location .location-info:link:hover .experience-block .experience-item .experience-subtitles .experience-subtitle, #experience-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .experience-block .experience-item .experience-subtitles .experience-subtitle, #entry-page #experience-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:link:hover .experience-subtitle, #experience-page #entry-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:link:hover .experience-subtitle, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:link:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:link:hover .progress-pop, #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .font-numeric, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #experience-page .page-block .container-intro .info-contact .location .location-info:link:focus .experience-block .experience-item .experience-subtitles .experience-subtitle, #experience-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .experience-block .experience-item .experience-subtitles .experience-subtitle, #entry-page #experience-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:link:focus .experience-subtitle, #experience-page #entry-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:link:focus .experience-subtitle, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:link:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:link:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:link:focus .progress-pop, #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .font-numeric, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #experience-page .page-block .container-intro .info-contact .location .location-info:visited:hover .experience-block .experience-item .experience-subtitles .experience-subtitle, #experience-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .experience-block .experience-item .experience-subtitles .experience-subtitle, #entry-page #experience-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:visited:hover .experience-subtitle, #experience-page #entry-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:visited:hover .experience-subtitle, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:visited:hover .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:hover .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:visited:hover .progress-pop, #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .font-numeric, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #about-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #about-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop, #entry-page #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #about-page #entry-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #experience-page .page-block .container-intro .info-contact .location .location-info:visited:focus .experience-block .experience-item .experience-subtitles .experience-subtitle, #experience-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .experience-block .experience-item .experience-subtitles .experience-subtitle, #entry-page #experience-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:visited:focus .experience-subtitle, #experience-page #entry-page .page-block .experience-block .experience-item .experience-subtitles .container-intro .info-contact .location .location-info:visited:focus .experience-subtitle, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-intro .info-contact .location .location-info:visited:focus .progress-title::after, #entry-page #more-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #more-page #entry-page .page-block .container-intro .info-contact .location .location-info:visited:focus .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop, #entry-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop, #more-page #entry-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-intro .info-contact .location .location-info:visited:focus .progress-pop {
+  font-weight: 600;
+}
+
 #entry-page .page-block .container-intro .info-contact .skills {
   font-size: 8pt;
   letter-spacing: 1px;
-  margin-bottom: 1cm;
 }
 
 #entry-page .page-block .container-intro .info-contact .skills .skill + .skill::before {
@@ -138,95 +212,60 @@ html, body {
   margin: 0 2mm;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts {
-  margin-left: -1px;
+@media screen and (max-width: 480px) {
+  #entry-page .page-block .container-intro .info-contact .skills .skill + .skill::before {
+    content: unset;
+  }
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 8pt;
+@media screen and (max-width: 480px) {
+  #entry-page .page-block .container-intro .info-contact .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 3mm;
+    opacity: .7;
+  }
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info .material-icons-outlined {
-  font-size: inherit;
-  color: #a86b60;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info .info-text {
-  margin-left: 2mm;
-  letter-spacing: .5px;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info:link, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info:link:hover, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:link:focus, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:visited:hover, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:visited:focus {
-  color: #e4988b;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .contact-info:link:hover .font-numeric, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:link:focus .font-numeric, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:visited:hover .font-numeric, #entry-page .page-block .container-intro .info-contact .contacts .contact-info:visited:focus .font-numeric {
-  font-weight: 600;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .direct-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .direct-contacts .email {
-  margin-left: 4mm;
-}
-
-#entry-page .page-block .container-intro .info-contact .contacts .social {
-  margin-top: 7mm;
+#entry-page .page-block .container-intro .info-contact .social {
+  margin-top: 3cm;
   margin-left: 3px;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .social .social-link {
+#entry-page .page-block .container-intro .info-contact .social .social-link {
   font-size: 16pt;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .social .social-link + .social-link {
-  margin-left: 4mm;
+#entry-page .page-block .container-intro .info-contact .social .social-link + .social-link {
+  margin-left: 5mm;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .social .social-link:link, #entry-page .page-block .container-intro .info-contact .contacts .social .social-link:visited {
+#entry-page .page-block .container-intro .info-contact .social .social-link:link, #entry-page .page-block .container-intro .info-contact .social .social-link:visited {
   color: #bd8379;
   text-decoration: unset;
   -webkit-transition: all 120ms linear;
   transition: all 120ms linear;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .social .social-link:link:focus, #entry-page .page-block .container-intro .info-contact .contacts .social .social-link:visited:focus {
+#entry-page .page-block .container-intro .info-contact .social .social-link:link:focus, #entry-page .page-block .container-intro .info-contact .social .social-link:visited:focus {
   color: #a8b36c;
 }
 
-#entry-page .page-block .container-intro .info-contact .contacts .social .social-link:link:hover, #entry-page .page-block .container-intro .info-contact .contacts .social .social-link:visited:hover {
+#entry-page .page-block .container-intro .info-contact .social .social-link:link:hover, #entry-page .page-block .container-intro .info-contact .social .social-link:visited:hover {
   color: #d3e27e;
 }
 
+#about-page {
+  padding-top: 1in;
+}
+
 #about-page .page-block .container-about {
-  margin-top: 1.2in;
-  margin-bottom: 1in;
+  margin-bottom: 1.2in;
 }
 
 #about-page .page-block .container-about .section-title {
@@ -237,6 +276,15 @@ html, body {
   text-align: center;
   padding-right: 16mm;
   margin-bottom: .8in;
+  cursor: default;
+}
+
+@media screen and (max-width: 480px) {
+  #about-page .page-block .container-about .section-title {
+    text-align: unset;
+    padding-right: unset;
+    padding-left: 2px;
+  }
 }
 
 #about-page .page-block .container-about .overview-grid {
@@ -247,18 +295,39 @@ html, body {
       grid-template-columns: 30% auto;
 }
 
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .overview-grid {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+
 #about-page .page-block .container-about .overview-grid .dp-container {
   padding: 3pt;
   background: #25211e;
   border-radius: 999in;
-  max-height: 7cm;
-  max-width: 7cm;
+  --dp-size: 7cm;
+  max-height: var(--dp-size);
+  max-width: var(--dp-size);
 }
 
 #about-page .page-block .container-about .overview-grid .dp-container .dp {
-  max-height: 7cm;
-  max-width: 7cm;
+  max-height: inherit;
+  max-width: inherit;
   border-radius: inherit;
+}
+
+@media screen and (max-width: 1320px) {
+  #about-page .page-block .container-about .overview-grid .dp-container {
+    --dp-size: 5cm;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #about-page .page-block .container-about .overview-grid .dp-container {
+    --dp-size: calc(100vw - 14mm);
+    border-radius: 0;
+  }
 }
 
 #about-page .page-block .container-about .overview-grid .brief-description {
@@ -271,8 +340,14 @@ html, body {
   margin-top: 3mm;
 }
 
-#about-page .page-block .container-about .overview-grid .about-contacts .titled-info {
-  margin: 0 7mm;
+#about-page .page-block .container-about .overview-grid .about-contacts {
+  margin: 0 12mm;
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .overview-grid .about-contacts {
+    display: none;
+  }
 }
 
 #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .info-title {
@@ -284,10 +359,1105 @@ html, body {
   font-weight: 500;
 }
 
-#about-page .page-block .container-about .overview-grid .about-contacts .titled-info .info-text.font-numeric {
+#about-page .page-block .container-about .overview-grid .about-contacts .titled-info .info-text.font-numeric, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-java .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-java .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-rest .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-rest .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-spring .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-spring .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-hibernate .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-oracle .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-javascript .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-html-css .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .about-contacts .titled-info .info-text.progress-title::after, #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .info-text.progress-pop, #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .about-contacts .titled-info .info-text.progress-pop, #about-page #experience-page .page-block .container-about .overview-grid .about-contacts .titled-info .experience-block .experience-item .experience-subtitles .info-text.experience-subtitle, #experience-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .experience-block .experience-item .experience-subtitles .info-text.experience-subtitle, #about-page #experience-page .page-block .experience-block .experience-item .experience-subtitles .container-about .overview-grid .about-contacts .titled-info .info-text.experience-subtitle, #experience-page #about-page .page-block .experience-block .experience-item .experience-subtitles .container-about .overview-grid .about-contacts .titled-info .info-text.experience-subtitle, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .info-text.progress-title::after, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .info-text.progress-title::after, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .info-text.progress-pop, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .info-text.progress-pop, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-english .info-text.progress-title::after, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-english .info-text.progress-title::after, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .info-text.progress-pop, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .info-text.progress-pop, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .info-text.progress-title::after, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .info-text.progress-title::after, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .container-about .overview-grid .about-contacts .titled-info .info-text.progress-title::after, #about-page #more-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .info-text.progress-pop, #more-page #about-page .page-block .container-about .overview-grid .about-contacts .titled-info .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .info-text.progress-pop, #about-page #more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop, #more-page #about-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .container-about .overview-grid .about-contacts .titled-info .info-text.progress-pop {
   font-weight: 600;
 }
 
 #about-page .page-block .container-about .overview-grid .about-contacts .titled-info + .titled-info .info-title {
-  margin-top: 7mm;
+  margin-top: 1cm;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social {
+  margin-top: 2cm;
+  margin-left: 3px;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social .social-link {
+  font-size: 16pt;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social .social-link + .social-link {
+  margin-left: 5mm;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:link, #about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:visited {
+  color: #5f5909;
+  text-decoration: unset;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:link:focus, #about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:visited:focus {
+  color: #636649;
+}
+
+#about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:link:hover, #about-page .page-block .container-about .overview-grid .about-contacts .social .social-link:visited:hover {
+  color: #0f3b25;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings {
+  margin-top: 1mm;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+}
+
+@media screen and (max-width: 1320px) {
+  #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating:first-child {
+    margin-top: 1cm;
+  }
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings::before {
+  content: "SKILL RATING";
+  position: absolute;
+  top: 0;
+  left: 4in;
+  -webkit-transform: rotate(90deg) translateX(51%);
+          transform: rotate(90deg) translateX(51%);
+  width: 4in;
+  text-transform: uppercase;
+  letter-spacing: 2mm;
+  font-weight: 800;
+  color: #dd2e0f;
+}
+
+@media screen and (max-width: 1320px) {
+  #about-page .page-block .container-about .overview-grid .skill-ratings::before {
+    -webkit-transform: unset;
+            transform: unset;
+    position: relative;
+    left: 0;
+  }
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title {
+  margin: 4mm 1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-title::after {
+  content: "Java 16";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 91%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 91%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-java .progress-bar .progress-pop::after {
+  content: "91%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title {
+  margin: 4mm -1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-title::after {
+  content: "REST Web Services";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 87%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 87%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-rest .progress-bar .progress-pop::after {
+  content: "87%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title {
+  margin: 4mm -1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-title::after {
+  content: "Spring, Spring Boot";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 78%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 78%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-spring .progress-bar .progress-pop::after {
+  content: "78%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title {
+  margin: 4mm -1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-title::after {
+  content: "Hibernate, JPA";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 75%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 75%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-hibernate .progress-bar .progress-pop::after {
+  content: "75%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title {
+  margin: 4mm -1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-title::after {
+  content: "Oracle";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 82%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 82%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-oracle .progress-bar .progress-pop::after {
+  content: "82%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title {
+  margin: 4mm 1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-title::after {
+  content: "JavaScript";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 67%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 67%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-javascript .progress-bar .progress-pop::after {
+  content: "67%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title {
+  margin: 4mm -1px;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-title::after {
+  content: "HTML, CSS";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 62%;
+  background: #3b2d2a;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 62%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating#skill-rating-html-css .progress-bar .progress-pop::after {
+  content: "62%";
+}
+
+#about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating + .skill-rating {
+  margin-top: 1cm;
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating {
+    --progress-length: 97%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #about-page .page-block .container-about .overview-grid .skill-ratings .skill-rating {
+    --progress-length: calc(100vw - 14mm);
+  }
+}
+
+#about-page .page-block .container-about .contact-buttons {
+  margin-top: 2in;
+  margin-right: 1cm;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 12mm;
+  display: flex;
+  flex-direction: row;
+  gap: 12mm;
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .contact-buttons {
+    margin-right: unset;
+  }
+}
+
+#about-page .page-block .container-about .contact-buttons .contact-button.contact-me:link, #about-page .page-block .container-about .contact-buttons .contact-button.contact-me:visited {
+  font-weight: 600;
+  color: #3b2d2a;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border: #3b2d2a solid 1mm;
+  background: #fafafa;
+  padding: 4mm 16mm;
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .contact-buttons .contact-button.contact-me:link, #about-page .page-block .container-about .contact-buttons .contact-button.contact-me:visited {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .contact-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#about-page .page-block .container-about .contact-buttons .contact-button.download-cv:link, #about-page .page-block .container-about .contact-buttons .contact-button.download-cv:visited {
+  font-weight: 600;
+  color: #fafafa;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border: #3b2d2a solid 1mm;
+  background: #3b2d2a;
+  padding: 4mm 10mm;
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .contact-buttons .contact-button.download-cv:link, #about-page .page-block .container-about .contact-buttons .contact-button.download-cv:visited {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #about-page .page-block .container-about .contact-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#experience-page {
+  background: #dbdbdb;
+  padding: 1in 0;
+}
+
+#experience-page .page-block .experience-block + .experience-block {
+  margin-top: 1.2in;
+}
+
+#experience-page .page-block .experience-block .section-title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 14pt;
+  margin-bottom: 16mm;
+}
+
+#experience-page .page-block .experience-block .experience-item + .experience-item {
+  margin-top: 12mm;
+}
+
+#experience-page .page-block .experience-block .experience-item .material-icons-sharp {
+  margin-left: -1px;
+  color: #424242;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-title {
+  margin: 0;
+  font-size: 12pt;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-title .company {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-title .company::after {
+  content: "•";
+  margin: 0 2mm;
+  opacity: .9;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-title .job-title {
+  font-style: italic;
+  letter-spacing: .5px;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-subtitles .experience-subtitle {
+  margin-left: .5px;
+  font-weight: 600;
+  font-size: 6.5pt;
+  color: #929292;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-subtitles .experience-subtitle + .experience-subtitle::before {
+  content: "•";
+  margin: 0 2mm;
+  opacity: .9;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-details {
+  margin: 6mm 1px;
+  padding-left: 0;
+  list-style-type: "–";
+  list-style-position: outside;
+  font-weight: 500;
+  font-size: 9pt;
+  color: #626262;
+  letter-spacing: 1px;
+}
+
+#experience-page .page-block .experience-block .experience-item .experience-details li {
+  margin: 1mm 0;
+  padding-left: 2mm;
+}
+
+#experience-page .page-block .experience-block.education .material-icons-sharp {
+  color: #545454;
+  -webkit-transform: scaleY(0.9);
+          transform: scaleY(0.9);
+}
+
+#more-page {
+  background: #1f1918;
+  padding: 1in 0 1.5in 0;
+}
+
+#more-page .page-block .container-more {
+  padding-right: 16mm;
+}
+
+@media screen and (max-width: 1320px) {
+  #more-page .page-block .container-more {
+    padding-right: unset;
+  }
+}
+
+#more-page .page-block .container-more .section-title {
+  text-transform: uppercase;
+  letter-spacing: 2mm;
+  font-weight: 800;
+  color: #ff2a6a;
+  text-align: center;
+  padding-right: 16mm;
+  margin-bottom: .8in;
+  cursor: default;
+}
+
+@media screen and (max-width: 480px) {
+  #more-page .page-block .container-more .section-title {
+    text-align: unset;
+    padding-right: unset;
+    padding-left: 2px;
+  }
+}
+
+#more-page .page-block .container-more .section-title {
+  padding-right: unset;
+  text-align: center;
+}
+
+#more-page .page-block .container-more .section-title:not(:first-child) {
+  margin-top: 1in;
+  margin-bottom: 0;
+}
+
+#more-page .page-block .container-more .block-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1cm;
+}
+
+@media screen and (max-width: 920px) {
+  #more-page .page-block .container-more .block-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16mm;
+  }
+}
+
+#more-page .page-block .container-more .block-items .block-item {
+  width: 30%;
+}
+
+@media screen and (max-width: 920px) {
+  #more-page .page-block .container-more .block-items .block-item {
+    width: 100%;
+  }
+}
+
+#more-page .page-block .container-more .block-items .block-item .block-title {
+  text-align: center;
+}
+
+#more-page .page-block .container-more .block-items .block-item .block-title .block-title-icon {
+  color: #ff2a6a;
+  font-size: 48pt;
+  display: block;
+}
+
+#more-page .page-block .container-more .block-items .block-item .block-title .block-title-text {
+  color: #fafafa;
+  display: block;
+}
+
+#more-page .page-block .container-more .block-items .block-item.personality .hashtags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1mm 3mm;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#more-page .page-block .container-more .block-items .block-item.personality .hashtags .hashtag {
+  color: #bdbdbd;
+}
+
+#more-page .page-block .container-more .block-items .block-item.personality .hashtags .hashtag::before {
+  content: "#";
+}
+
+#more-page .page-block .container-more .block-items .block-item.language {
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 5in;
+  --title-color: $colorDark;
+  --progress-length: 100%;
+  --title-color: #e0dcde;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title {
+  margin: 4mm -1px;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-title::after {
+  content: "Bangla";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 100%;
+  background: #3b2d2a;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-bangla .progress-bar .progress-pop::after {
+  content: "100%";
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title {
+  margin: 4mm -1px;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-title::after {
+  content: "English";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 85%;
+  background: #3b2d2a;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 85%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-english .progress-bar .progress-pop::after {
+  content: "85%";
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title {
+  margin: 4mm -1px;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-title::after {
+  content: "Hindi";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar {
+  height: 4pt;
+  width: var(--progress-length);
+  background: #a59492;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 50%;
+  background: #3b2d2a;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop {
+  position: absolute;
+  bottom: 5mm;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fafafa;
+  background: #3b2d2a;
+  border-radius: 3pt;
+  padding: 3pt 7pt 4pt 9pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  opacity: .8;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(49%) rotate(45deg);
+          transform: translateX(-50%) translateY(49%) rotate(45deg);
+  background: inherit;
+  height: 3mm;
+  width: 3mm;
+  border-radius: 0 0 2pt 0;
+}
+
+#more-page .page-block .container-more .block-items .block-item.language .skill-rating#skill-rating-hindi .progress-bar .progress-pop::after {
+  content: "50%";
+}
+
+#more-page .page-block .container-more .section-highlight {
+  color: #fafafa;
+  font-size: Max(3vw, 24pt);
+  text-align: center;
+  margin: 2mm 0;
+}
+
+#more-page .page-block .container-more .social {
+  margin-top: 2cm;
+  margin-left: 3px;
+}
+
+#more-page .page-block .container-more .social .social-link {
+  font-size: 16pt;
+}
+
+#more-page .page-block .container-more .social .social-link + .social-link {
+  margin-left: 5mm;
+}
+
+#more-page .page-block .container-more .social .social-link:link, #more-page .page-block .container-more .social .social-link:visited {
+  color: #eee1df;
+  text-decoration: unset;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+#more-page .page-block .container-more .social .social-link:link:focus, #more-page .page-block .container-more .social .social-link:visited:focus {
+  color: #a8b36c;
+}
+
+#more-page .page-block .container-more .social .social-link:link:hover, #more-page .page-block .container-more .social .social-link:visited:hover {
+  color: #d3e27e;
+}
+
+#more-page .page-block .container-more .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12mm;
+}
+
+#more-page .page-block .container-more .social .social-link + .social-link {
+  margin: unset;
+}
+
+@media screen and (max-width: 480px) {
+  #more-page .page-block .container-more .social .social-link {
+    font-size: 36pt;
+  }
+}
+
+#more-page .page-block .container-more .social .social-link .link-title {
+  margin-left: 2mm;
+  cursor: inherit;
+}
+
+@media screen and (max-width: 480px) {
+  #more-page .page-block .container-more .social .social-link .link-title {
+    all: unset;
+    display: none;
+  }
+}
+
+.end-line {
+  position: absolute;
+  bottom: 3mm;
+  left: calc(50% - 8mm);
+  width: Min(2in, 25%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: .3;
+  background: transparent;
+  border: unset;
+  border-bottom: solid 1px #fafafa;
+}
+
+@media screen and (max-width: 1320px) {
+  .end-line {
+    left: 50%;
+  }
 }

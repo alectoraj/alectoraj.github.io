@@ -9,3 +9,24 @@
 @mixin smooth-transition($target: all, $easing: linear, $duration: 120ms) {
     transition: $target $duration $easing;
 }
+
+@mixin screen-until($px) {
+    @media screen and (max-width: $px) {
+        @content;
+    }
+}
+@mixin pc {
+    @include screen-until(1320px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @include screen-until(920px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @include screen-until(480px) {
+        @content;
+    }
+}
