@@ -1,0 +1,24 @@
+.font-title {
+    font-family: 'Antonio', sans-serif;
+}
+.font-text {
+    font-family: 'Montserrat', sans-serif;
+
+    &.light {
+        @extend .font-text;
+        font-weight: 300;
+    }
+
+    &.normal {
+        @extend .font-text;
+        font-weight: 500;
+    }
+}
+.font-numeric {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+.font-serif {
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+}

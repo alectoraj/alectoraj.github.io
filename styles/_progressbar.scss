@@ -1,0 +1,88 @@
+@mixin skill-rating($selector, $percent, $title: $selector, $titleShift: -1px) {
+
+    $colorWhite: #fafafa;
+    $colorLight: #a59492;
+    $colorDark: #3b2d2a;
+    $barHeight: 4pt;
+
+    --progress-length: 5in;
+    --title-color: $colorDark;
+    
+    .skill-rating#skill-rating-#{to-lower-case($selector)} {
+
+        .progress-title {
+            margin: 4mm $titleShift;
+
+            &::after {
+                content: $title;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                @extend .font-numeric;
+                font-weight: 800;
+                color: var(--title-color);
+            }
+        }
+
+        .progress-bar {
+            height: $barHeight;
+            width: var(--progress-length);
+
+            // @extend .border-round;
+            background: $colorLight;
+        
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: inherit;
+                width: $percent;
+                // border-radius: inherit;
+                background: $colorDark;
+            }
+            
+            .progress-pop {
+                position: absolute;
+                bottom: 5mm;
+
+                @if $percent > 95% {
+                    left: 100%;
+                    transform: translateX(-100%);
+                } @else {
+                    left: $percent;
+                    transform: translateX(-50%);
+                }
+
+                color: $colorWhite;
+                background: $colorDark;
+                border-radius: 3pt;
+                padding: 3pt 7pt 4pt 9pt;
+
+                @extend .font-numeric;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 9pt;
+
+                filter: contrast(120%);
+                opacity: .8;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(49%) rotate(45deg);
+
+                    background: inherit;
+                    height: 3mm;
+                    width: 3mm;
+                    border-radius: 0 0 2pt 0;
+                }
+
+                &::after {
+                    content: "#{$percent}";
+                }
+            }
+        }
+    }
+}
