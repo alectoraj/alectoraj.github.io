@@ -128,11 +128,11 @@ html, body {
   display: table-cell;
   vertical-align: middle;
   width: 100vw;
-  height: 96vh;
+  height: 100vh;
 }
 
 #home .page-block .container-intro {
-  margin-top: 24mm;
+  margin-top: 16mm;
 }
 
 #home .page-block .container-intro .info-contact .title {
