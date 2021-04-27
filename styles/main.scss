@@ -7,6 +7,10 @@ $light: #fafafa;
 $dark: #242424;
 $darker: #121212;
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     background-color: $light;
     color: $darker;
@@ -110,20 +114,25 @@ html, body {
     }
 }
 
-#entry-page {
+#home {
     background: $dark url('/images/wall.jpg');
     background-position: right bottom;
     background-size: 100%;
     color: $light;
 
+    @include mobile {
+        background-image: url('/images/wall-mobile.jpg');
+        background-position-y: top;
+    }
+
     .page-block {
         display: table-cell;
         vertical-align: middle;
         width: 100vw;
-        height: 100vh;
+        height: 96vh;
 
         .container-intro {
-            margin-top: 16mm;
+            margin-top: 24mm;
 
             .info-contact {
                 .title {
@@ -243,7 +252,7 @@ html, body {
     }
 }
 
-#about-page {
+#about {
     padding-top: 1in;
 
     .page-block {
@@ -425,7 +434,7 @@ html, body {
     }
 }
 
-#experience-page {
+#experience {
     $light: #dbdbdb;
     background: $light;
     padding: 1in 0;
@@ -524,7 +533,7 @@ html, body {
     }
 }
 
-#more-page {
+#more {
     $highlight: #ff2a6a;
     $darkLocal: #1f1918;
 
