@@ -351,6 +351,19 @@ html, body {
   margin-top: 3mm;
 }
 
+@media screen and (max-width: 920px) {
+  #about .page-block .container-about .overview-grid .brief-description {
+    line-height: 1.7em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #about .page-block .container-about .overview-grid .brief-description {
+    font-size: 13pt;
+    line-height: 1.8em;
+  }
+}
+
 #about .page-block .container-about .overview-grid .about-contacts {
   margin: 0 12mm;
 }
