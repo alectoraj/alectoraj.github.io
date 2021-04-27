@@ -304,6 +304,14 @@ html, body {
                     p:first-child {
                         margin-top: 3mm;
                     }
+
+                    @include tablet {
+                        line-height: 1.7em;
+                    }
+                    @include mobile {
+                        font-size: 13pt;
+                        line-height: 1.8em;
+                    }
                 }
 
                 .about-contacts {
