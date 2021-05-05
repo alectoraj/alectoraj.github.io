@@ -423,6 +423,18 @@ html, body {
                             @include tablet {
                                 display: block;
                             }
+
+                            &:hover {
+                                transform: scale(1.025);
+                                box-shadow: 2px 2px 12px 0 rgba(12,12,12,.4);
+                            }
+                            &:focus {
+                                box-shadow: 2px 2px 6px 0 rgba(12,12,12,.4);
+                            }
+                            &:active {
+                                transform: scale(.92);
+                                box-shadow: 2px 2px 2px 0 rgba(12,12,12,.2);
+                            }
                         }
                     }
 

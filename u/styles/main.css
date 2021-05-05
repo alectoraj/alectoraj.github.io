@@ -962,6 +962,25 @@ html, body {
   }
 }
 
+#about .page-block .container-about .contact-buttons .contact-button.contact-me:link:hover, #about .page-block .container-about .contact-buttons .contact-button.contact-me:visited:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+  -webkit-box-shadow: 2px 2px 12px 0 rgba(12, 12, 12, 0.4);
+          box-shadow: 2px 2px 12px 0 rgba(12, 12, 12, 0.4);
+}
+
+#about .page-block .container-about .contact-buttons .contact-button.contact-me:link:focus, #about .page-block .container-about .contact-buttons .contact-button.contact-me:visited:focus {
+  -webkit-box-shadow: 2px 2px 6px 0 rgba(12, 12, 12, 0.4);
+          box-shadow: 2px 2px 6px 0 rgba(12, 12, 12, 0.4);
+}
+
+#about .page-block .container-about .contact-buttons .contact-button.contact-me:link:active, #about .page-block .container-about .contact-buttons .contact-button.contact-me:visited:active {
+  -webkit-transform: scale(0.92);
+          transform: scale(0.92);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(12, 12, 12, 0.2);
+          box-shadow: 2px 2px 2px 0 rgba(12, 12, 12, 0.2);
+}
+
 @media screen and (max-width: 920px) {
   #about .page-block .container-about .contact-buttons {
     -webkit-box-orient: vertical;
@@ -985,6 +1004,25 @@ html, body {
   #about .page-block .container-about .contact-buttons .contact-button.download-cv:link, #about .page-block .container-about .contact-buttons .contact-button.download-cv:visited {
     display: block;
   }
+}
+
+#about .page-block .container-about .contact-buttons .contact-button.download-cv:link:hover, #about .page-block .container-about .contact-buttons .contact-button.download-cv:visited:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+  -webkit-box-shadow: 2px 2px 12px 0 rgba(12, 12, 12, 0.4);
+          box-shadow: 2px 2px 12px 0 rgba(12, 12, 12, 0.4);
+}
+
+#about .page-block .container-about .contact-buttons .contact-button.download-cv:link:focus, #about .page-block .container-about .contact-buttons .contact-button.download-cv:visited:focus {
+  -webkit-box-shadow: 2px 2px 6px 0 rgba(12, 12, 12, 0.4);
+          box-shadow: 2px 2px 6px 0 rgba(12, 12, 12, 0.4);
+}
+
+#about .page-block .container-about .contact-buttons .contact-button.download-cv:link:active, #about .page-block .container-about .contact-buttons .contact-button.download-cv:visited:active {
+  -webkit-transform: scale(0.92);
+          transform: scale(0.92);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(12, 12, 12, 0.2);
+          box-shadow: 2px 2px 2px 0 rgba(12, 12, 12, 0.2);
 }
 
 @media screen and (max-width: 920px) {
