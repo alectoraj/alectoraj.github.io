@@ -373,11 +373,13 @@ html, body {
                         }
                     }
                     
-                    @include skill-rating("JAVA", 91%, "Java 16", 1px);
+                    @include skill-rating("JAVA", 96%, "Java 17", 1px);
                     @include skill-rating("REST", 87%, "REST Web Services");
-                    @include skill-rating("Spring", 78%, "Spring, Spring Boot");
-                    @include skill-rating("Hibernate", 75%, "Hibernate, JPA");
+                    @include skill-rating("Spring", 86%, "Spring, Spring Boot");
+                    @include skill-rating("Microservices", 74%);
+                    @include skill-rating("Hibernate", 85%, "Hibernate, JPA");
                     @include skill-rating("Oracle", 82%);
+                    @include skill-rating("Mongo", 63%, "Mongo DB");
                     @include skill-rating("JavaScript", 67%, $titleShift: 1px);
                     @include skill-rating("HTML-CSS", 62%, "HTML, CSS");
 
