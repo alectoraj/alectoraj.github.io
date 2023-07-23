@@ -15,7 +15,7 @@ html, body {
     background-color: $light;
     color: $darker;
     margin: 0;
-    @extend .font-text.light;
+    @extend .font-text, .light;
 }
 
 * {
@@ -60,7 +60,7 @@ html, body {
 
     .menu {
         .in-link {
-            @extend .font-text.normal;
+            @extend .font-text, .normal;
             font-size: 9pt;
 
             + .in-link {
@@ -201,7 +201,7 @@ html, body {
                 }
 
                 .skills {
-                    @extend .font-text.normal;
+                    @extend .font-text, .normal;
                     font-size: 8pt;
                     letter-spacing: 1px;
 
@@ -373,15 +373,16 @@ html, body {
                         }
                     }
                     
-                    @include skill-rating("JAVA", 96%, "Java 17", 1px);
+                    @include skill-rating("JAVA", 97%, "Java 17", 1px);
                     @include skill-rating("REST", 87%, "REST Web Services");
-                    @include skill-rating("Spring", 86%, "Spring, Spring Boot");
-                    @include skill-rating("Microservices", 74%);
-                    @include skill-rating("Hibernate", 85%, "Hibernate, JPA");
+                    @include skill-rating("Spring", 89%, "Spring, Spring Boot");
+                    @include skill-rating("Kafka", 90%);
+                    @include skill-rating("Microservices", 81%);
+                    @include skill-rating("JPA", 85%, "Spring Data JPA");
                     @include skill-rating("Oracle", 82%);
-                    @include skill-rating("Mongo", 63%, "Mongo DB");
-                    @include skill-rating("JavaScript", 67%, $titleShift: 1px);
-                    @include skill-rating("HTML-CSS", 62%, "HTML, CSS");
+                    @include skill-rating("Mongo", 86%, "Mongo DB");
+                    @include skill-rating("JavaScript", 78%, $titleShift: 1px);
+                    @include skill-rating("HTML-CSS", 72%, "HTML, CSS");
 
                     .skill-rating {
                         + .skill-rating {
